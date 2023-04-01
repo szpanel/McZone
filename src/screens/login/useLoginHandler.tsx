@@ -1,33 +1,44 @@
-import {useState} from 'react';
+import {useRef, useState} from 'react';
 
 const LOGIN_ERROR_MESSAGE =
   'Wystapil blad podczas logowania, skontaktuj sie z administratorem';
+
+const MUST_FILL_INPUTS = 'Wprowadź login i hasło';
 
 export const useLoginHandler = () => {
   const [login, setLogin] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [error, setError] = useState<string>();
+  const isLogging = useRef<boolean>(false);
 
-  const isCredentialsValid = (): boolean => {
-    // TODO: Implement proper validation when needed
-    return password !== 'e-v';
-  };
+  const onLoginEnd = () => (isLogging.current = false);
 
   const logIn = () => {
-    const validCredentials = isCredentialsValid();
-    if (!validCredentials) {
-      return setError(LOGIN_ERROR_MESSAGE);
+    if (isLogging.current) {
+      return;
     }
-    setError(undefined);
-    // TODO: Handle success
+    isLogging.current = true;
+    if (login.length < 1 || password.length < 1) {
+      setError(MUST_FILL_INPUTS);
+      onLoginEnd();
+      return;
+    }
+    if (password !== 'e-v') {
+      setError(LOGIN_ERROR_MESSAGE);
+      onLoginEnd();
+      return;
+    }
+    onLoginEnd();
   };
 
   const onLoginChange = (text: string) => {
     setLogin(text);
+    setError(undefined);
   };
 
   const onPasswordChange = (text: string) => {
     setPassword(text);
+    setError(undefined);
   };
 
   return {

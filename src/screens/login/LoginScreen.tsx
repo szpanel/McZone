@@ -28,7 +28,7 @@ const LoginScreen = () => {
             <Text style={styles.loginErrorText}>{loginError}</Text>
           </View>
         ) : null}
-        <Button title={'Log in'} onPress={logIn} />
+        <Button disabled={!!loginError} title={'Log in'} onPress={logIn} />
       </View>
     </ImageBackground>
   );

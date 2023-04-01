@@ -8,6 +8,7 @@ export const InputOptions: Partial<InputProps> = {
     marginBottom: 8,
   },
   inputStyle: {
+    color: 'white',
     backgroundColor: 'black',
     fontFamily: 'minecraft',
     borderColor: 'white',

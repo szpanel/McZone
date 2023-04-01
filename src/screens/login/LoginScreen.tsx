@@ -6,12 +6,14 @@ import dirtBackground from '@assets/backgrounds/dirt.png';
 import {Input} from '@minecraft-components/Input';
 import {useLoginHandler} from './useLoginHandler';
 import {Text} from '@minecraft-components/Text';
+import {Logo} from './Logo';
 
 const LoginScreen = () => {
   const {login, password, logIn, actions, loginError} = useLoginHandler();
   return (
     <ImageBackground style={styles.imageBackground} source={dirtBackground}>
       <View style={styles.container}>
+        <Logo />
         <Input
           label="Login"
           value={login}

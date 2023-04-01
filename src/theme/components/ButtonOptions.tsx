@@ -2,6 +2,8 @@ import {ButtonProps} from '@rneui/base';
 
 export const ButtonOptions: Partial<ButtonProps> = {
   color: '#999',
+  // TODO
+  disabledStyle: {},
   buttonStyle: {
     borderWidth: 2,
     borderColor: 'black',
@@ -10,7 +12,7 @@ export const ButtonOptions: Partial<ButtonProps> = {
     paddingBottom: 0.3,
   },
   titleStyle: {
-    fontSize: 24,
+    fontSize: 18,
     textShadowColor: '#000A',
     shadowRadius: 2,
     fontFamily: 'minecraft',

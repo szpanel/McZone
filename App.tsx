@@ -1,15 +1,12 @@
 import React from 'react';
-import {SafeAreaProvider} from 'react-native-safe-area-context';
-import {AppThemeProvider} from '@theme/AppThemeProvider';
-import ExampleEntryScreen from './src/screens/ExampleEntryScreen';
+import ProviderManager from './src/providers/ProviderManager';
+import MainStack from './src/navigation/MainStack';
 
 function App(): JSX.Element {
   return (
-    <SafeAreaProvider>
-      <AppThemeProvider>
-        <ExampleEntryScreen />
-      </AppThemeProvider>
-    </SafeAreaProvider>
+    <ProviderManager>
+      <MainStack />
+    </ProviderManager>
   );
 }
 

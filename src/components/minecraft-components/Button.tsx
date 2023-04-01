@@ -5,8 +5,9 @@ import {StyleProp, ViewStyle} from 'react-native';
 interface McButtonProps {
   title: string;
   style?: StyleProp<ViewStyle>;
+  onPress?: () => void;
 }
 
-export const Button = ({title, style}: McButtonProps) => {
-  return <EButton title={title} buttonStyle={style} />;
+export const Button = ({title, style, onPress}: McButtonProps) => {
+  return <EButton onPress={onPress} title={title} buttonStyle={style} />;
 };

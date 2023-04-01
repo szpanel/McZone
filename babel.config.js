@@ -7,6 +7,8 @@ module.exports = {
         alias: {
           '@components': './src/components',
           '@minecraft-components': './src/components/minecraft-components',
+          '@theme': './src/theme',
+          '@assets': './assets',
         },
       },
     ],

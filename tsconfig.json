@@ -8,6 +8,10 @@
       ],
       "@minecraft-components/*": [
         "components/minecraft-components/*"
+      ],
+      "@theme/*":[ "theme/*"],
+      "@assets/*": [
+        "../assets/*"
       ]
     }
   }

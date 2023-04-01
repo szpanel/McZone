@@ -1,9 +1,12 @@
 import {useRef, useState} from 'react';
+import {Logger} from '../../utils/logger';
 
 const LOGIN_ERROR_MESSAGE =
   'Wystapil blad podczas logowania, skontaktuj sie z administratorem';
 
 const MUST_FILL_INPUTS = 'Wprowadź login i hasło';
+
+const TAG = 'useLoginHandler';
 
 export const useLoginHandler = () => {
   const [login, setLogin] = useState<string>('');
@@ -14,6 +17,7 @@ export const useLoginHandler = () => {
   const onLoginEnd = () => (isLogging.current = false);
 
   const logIn = () => {
+    Logger.log(TAG, 'logIn called');
     if (isLogging.current) {
       return;
     }
@@ -28,6 +32,7 @@ export const useLoginHandler = () => {
       onLoginEnd();
       return;
     }
+    Logger.log(TAG, 'logIn success');
     onLoginEnd();
   };
 

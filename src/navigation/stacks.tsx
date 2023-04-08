@@ -1,3 +1,4 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {RootStackParamList} from './types';
 
-export const MainStackNavigator = createNativeStackNavigator();
+export const RootStack = createNativeStackNavigator<RootStackParamList>();

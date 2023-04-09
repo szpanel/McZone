@@ -5,6 +5,7 @@ module.exports = {
       'module-resolver',
       {
         alias: {
+          '@containers': './src/containers',
           '@components': './src/components',
           '@minecraft-components': './src/components/minecraft-components',
           '@theme': './src/theme',
